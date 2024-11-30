@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #9b59b6; /* Purple background */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            color: white;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.5em;
+            animation: fadeIn 4s ease-in-out;
+        }
+        .floating-item {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            background-size: cover;
+            animation: float 8s infinite ease-in-out;
+            z-index: 1;
+        }
+        .tulip {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/0/04/Tulip_-_floriade_canberra.jpg') no-repeat center;
+        }
+        .daisy {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Leucanthemum_vulgare_%28Ox-eye_Daisy%29.jpg') no-repeat center;
+        }
+        .dog {
+            width: 150px;
+            height: 150px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/b/b9/Puppy_on_Halong_Bay.jpg') no-repeat center;
+            background-size: cover;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite ease-in-out;
+            z-index: 2;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(-20px); opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) translateX(20px); opacity: 0; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) translateX(-50%); }
+            50% { transform: translateY(-20px) translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday! 🎂</h1>
+        <p>May your day be as bright as tulips and daisies!</p>
+    </div>
+    <!-- Floating Elements -->
+    <div class="floating-item tulip" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="floating-item daisy" style="left: 25%; animation-delay: 1s;"></div>
+    <div class="floating-item tulip" style="left: 40%; animation-delay: 2s;"></div>
+    <div class="floating-item daisy" style="left: 60%; animation-delay: 3s;"></div>
+    <div class="floating-item tulip" style="left: 80%; animation-delay: 4s;"></div>
+    <!-- Cute Dog -->
+    <div class="dog"></div>
+</body>
+</html>
